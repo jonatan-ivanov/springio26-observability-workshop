@@ -33,6 +33,13 @@ management:
   endpoint:
     env:
       show-values: always
+  observations:
+    key-values:
+      group: ${spring.application.group}
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      group: ${spring.application.group}
 
 application:
   security:

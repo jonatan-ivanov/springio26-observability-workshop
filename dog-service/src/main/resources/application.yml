@@ -40,6 +40,10 @@ management:
     tags:
       application: ${spring.application.name}
       group: ${spring.application.group}
+    distribution:
+      percentiles-histogram:
+        # all: true
+        http.server.requests: true
 
 application:
   security:

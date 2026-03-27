@@ -13,6 +13,7 @@
 	<properties>
 		<java.version>25</java.version>
 		<loki4j.version>2.0.3</loki4j.version>
+		<datasource-micrometer.version>2.2.0</datasource-micrometer.version>
 	</properties>
 	<dependencies>
 		<!-- Compile -->
@@ -46,6 +47,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-zipkin</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>net.ttddyy.observation</groupId>
+			<artifactId>datasource-micrometer-spring-boot</artifactId>
+		</dependency>
 		<!-- DataBase -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -78,6 +83,17 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>net.ttddyy.observation</groupId>
+				<artifactId>datasource-micrometer-bom</artifactId>
+				<version>${datasource-micrometer.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
